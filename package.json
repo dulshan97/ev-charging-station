@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "xstate": "^5.19.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
