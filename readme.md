@@ -41,35 +41,35 @@ Every state transition and entry will be logged in the terminal.
 
 2. Authorized : authorization succeeded.
 
-Actions:
+**Actions:**
 
-s -> Start charging 
-r -> reset to idle
+- s -> Start charging 
+- r -> reset to idle
 
 3. authorizationFailed: Authorization failed.
 
-Actions:
+**Actions:**
 
-r-> reset to idle.
+- r -> reset to idle.
 
 4. starting:Preparing to charge.
 
-Actions: 
+**Actions:** 
 
-c-> Beging charging(transition to charging)
-r->  reset to idle.
+- c-> Beging charging(transition to charging)
+- r->  reset to idle.
 
 5. charging: Vehicle is charging.
 
-actions: 
-t-> stop charging (transition to stopped).
-r-> reset to idle.
+**Actions:** 
+- t-> stop charging (transition to stopped).
+- r-> reset to idle.
 
 6. stopped:Charging stopped.
 
-Actions:
+**Actions:**
 
-r-> Reset to idle
+- r-> Reset to idle
 
 ## Authorized Condion
 
