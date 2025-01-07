@@ -4,8 +4,8 @@
 
 ### clone the repository
 
-git clone ``<repo-url>``
-cd <repo-directory>
+git clone ``<repo-url>`` 
+cd ``<repo-directory>``
 
 ### install dependencies
 
