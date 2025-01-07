@@ -31,13 +31,13 @@ Every state transition and entry will be logged in the terminal.
 
 # states
 
-1. idle : initial state.\
+1. idle : initial state.
 
 **Actions:** 
 
-a -> Attempt authorization (if success then authorized, otherwise it will be authorizationFailed)
+- a -> Attempt authorization (if success then authorized, otherwise it will be authorizationFailed)
 
-f -> Simulate failed Authrization
+- f -> Simulate failed Authrization
 
 2. Authorized : authorization succeeded.
 
@@ -50,7 +50,7 @@ r -> reset to idle
 
 Actions:
 
-r-> reset to idel.
+r-> reset to idle.
 
 4. starting:Preparing to charge.
 
