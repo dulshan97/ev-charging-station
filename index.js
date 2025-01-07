@@ -1,4 +1,4 @@
-// index.js
+
 const { interpret } = require('xstate');
 const { evChargingMachine } = require('./machine');
 
@@ -77,11 +77,11 @@ process.stdin.on('data', (key) => {
       service.send(keyPressed);
     } catch (error) {
       console.log('\nInvalid transition for current state');
-      displayActions(service.state.value);
+      displayActions(service.getSnapshot.value);
     }
   } else {
     console.log('\nInvalid key pressed. Try again.');
-    displayActions(service.state.value);
+    displayActions(service.getSnapshot.value);
   }
 });
 
@@ -93,6 +93,6 @@ process.on('SIGINT', () => {
 
 process.on('uncaughtException', (error) => {
   console.error('An error occurred:', error);
-  console.log('Current state:', service.state?.value);
+  console.log('Current state:', service.getSnapshot?.value);
   process.exit(1);
 });
