@@ -4,7 +4,7 @@ const { evChargingMachine } = require('./machine');
 
 
 
-// Helper function to display state-specific actions
+
 function getStateActions(state) {
   const actions = {
     idle: ['a - Attempt authorization', 'f - Simulate failed authorization'],
@@ -18,7 +18,7 @@ function getStateActions(state) {
   return actions[state] || ['r - Reset to idle'];
 }
 
-// Display available actions for current state
+
 function displayActions(stateValue) {
   console.log(`\nCurrent state: ${stateValue}`);
   console.log('Available actions:');
@@ -26,7 +26,7 @@ function displayActions(stateValue) {
   console.log('q - Quit application\n');
 }
 
-// Display instructions
+
 function displayInstructions() {
   console.log('\n=== EV Charging Station Controls ===');
   console.log('Available commands:');
@@ -40,24 +40,24 @@ function displayInstructions() {
   console.log('============================\n');
 }
 
-// Create service
+
 const service = interpret(evChargingMachine);
 
-// Subscribe to state changes
+
 service.subscribe(state => {
   if (state.changed !== false) {
     displayActions(state.value);
   }
 });
 
-// Start the service
+
 service.start();
 
-// Display initial instructions and state
+
 displayInstructions();
 displayActions('idle');
 
-// Handle keyboard input
+
 process.stdin.setRawMode(true);
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
@@ -85,7 +85,7 @@ process.stdin.on('data', (key) => {
   }
 });
 
-// Handle cleanup
+
 process.on('SIGINT', () => {
   console.log('\nExiting application...');
   process.exit(0);

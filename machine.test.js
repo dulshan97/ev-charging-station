@@ -17,10 +17,10 @@ describe('EV Charging Station State Machine', () => {
     });
 
     test('with guard success, testing transition changing idle to the authorized with event "a" ', () => {
-        // Mocking guard behavior to force success
+        
         const machine = evChargingMachine.withConfig({
             guards: {
-                isAuthorized: () => true, // Force success
+                isAuthorized: () => true, 
             },
         });
         service = interpret(machine).start();
@@ -30,10 +30,10 @@ describe('EV Charging Station State Machine', () => {
     });
 
     test('test trasition from idle to authFailed with event "a" whith guard failure ', () => {
-        // Mocking guard behavior to force failure
+        
         const machine = evChargingMachine.withConfig({
             guards: {
-                isAuthorized: () => false, // Force failure
+                isAuthorized: () => false, 
             },
         });
         service = interpret(machine).start();
@@ -48,10 +48,10 @@ describe('EV Charging Station State Machine', () => {
     });
 
     test('testing whether any state can be reset to idle state', () => {
-        // Test from authorized state
+        
         const machine = evChargingMachine.withConfig({
             guards: {
-                isAuthorized: () => true, // Force success
+                isAuthorized: () => true, 
             },
         });
         service = interpret(machine).start();
@@ -60,37 +60,37 @@ describe('EV Charging Station State Machine', () => {
         service.send('r');
         expect(service.state.value).toBe('idle');
 
-        // Test from charging state
-        service.send('a'); // To authorized
-        service.send('s'); // To starting
-        service.send('c'); // To charging
-        service.send('r'); // Reset to idle
+        
+        service.send('a'); 
+        service.send('s'); 
+        service.send('c'); 
+        service.send('r'); 
         expect(service.state.value).toBe('idle');
     });
 
     test('should follow complete charging flow', () => {
         const machine = evChargingMachine.withConfig({
             guards: {
-                isAuthorized: () => true, // Force success
+                isAuthorized: () => true, 
             },
         });
         service = interpret(machine).start();
 
-        service.send('a'); // Authorized
+        service.send('a'); 
         expect(service.getSnapshot().value).toBe('authorized');
 
-        service.send('s'); // Starting
+        service.send('s'); 
         expect(service.getSnapshot().value).toBe('starting');
 
-        service.send('c'); // Charging
+        service.send('c');
         expect(service.getSnapshot().value).toBe('charging');
 
-        service.send('t'); // Stopped
+        service.send('t'); 
         expect(service.getSnapshot().value).toBe('stopped');
     });
 
     test('should not transition on invalid events', () => {
-        service.send('s'); // Invalid in idle state
-        expect(service.state.value).toBe('idle'); // State should remain idle
+        service.send('s'); 
+        expect(service.state.value).toBe('idle'); 
     });
 });

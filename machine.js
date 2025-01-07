@@ -10,11 +10,11 @@ const evChargingMachine = createMachine({
         a: [
           {
             target: 'authorized',
-            cond: 'isAuthorized', // Use the guard here
+            cond: 'isAuthorized', 
             actions: ['logTransition']
           },
           {
-            target: 'authorizationFailed', // Fallback if guard fails
+            target: 'authorizationFailed', 
             actions: ['logTransition']
           }
         ],
@@ -94,7 +94,7 @@ const evChargingMachine = createMachine({
     }
   },
   guards: {
-    isAuthorized: () => Math.random() > 0.5 // Randomly simulate success or failure
+    isAuthorized: () => Math.random() > 0.5 
   }
 });
 
