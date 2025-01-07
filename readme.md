@@ -33,7 +33,7 @@ Every state transition and entry will be logged in the terminal.
 
 1. idle : initial state.\
 
-Actions: 
+**Actions:** 
 
 a -> Attempt authorization (if success then authorized, otherwise it will be authorizationFailed)
 
