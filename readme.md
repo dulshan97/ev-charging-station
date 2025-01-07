@@ -46,26 +46,26 @@ Every state transition and entry will be logged in the terminal.
 - s -> Start charging 
 - r -> reset to idle
 
-### 3. ## authorizationFailed ##: Authorization failed.
+### 3.  **authorizationFailed** : Authorization failed.
 
 **Actions:**
 
 - r -> reset to idle.
 
-### 4. ## starting ## :Preparing to charge.
+### 4.  **starting**  :Preparing to charge.
 
 **Actions:** 
 
 - c-> Beging charging(transition to charging)
 - r->  reset to idle.
 
-### 5. ## charging ## : Vehicle is charging.
+### 5.  **charging**  : Vehicle is charging.
 
 **Actions:** 
 - t-> stop charging (transition to stopped).
 - r-> reset to idle.
 
-### 6. ## stopped ## :Charging stopped.
+### 6.  **stopped**  :Charging stopped.
 
 **Actions:**
 
