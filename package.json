@@ -1,16 +1,14 @@
 {
   "name": "ev-charging-station",
   "version": "1.0.0",
-  "description": "",
+  "description": "EV Charging Station State Machine Implementation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "xstate": "^5.19.1"
+    "xstate": "^4.38.2"
   },
   "devDependencies": {
     "jest": "^29.7.0"
