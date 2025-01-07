@@ -1,12 +1,10 @@
 # Ev Charging Station State Machine
 
-
-
 ## instruction for running the application 
 
 ### clone the repository
 
-git clone <repo-url>
+git clone ``<repo-url>``
 cd <repo-directory>
 
 ### install dependencies
@@ -15,13 +13,13 @@ npm install
 
 ### run the application 
 
-node index.js\ 
+node index.js
 or 
 npm start
 
 ### Test
 
-npm test\
+npm test
 
 (for unit testing - jest framework is used)
 
@@ -35,41 +33,41 @@ Every state transition and entry will be logged in the terminal.
 
 1. idle : initial state.\
 
-Actions: \
+Actions: 
 
-a -> Attempt authorization (if success then authorized,\ otherwise it will be authorizationFailed)
+a -> Attempt authorization (if success then authorized, otherwise it will be authorizationFailed)
 
 f -> Simulate failed Authrization
 
-2. Authorized : authorization succeeded.\
+2. Authorized : authorization succeeded.
 
-Actions:\
+Actions:
 
-s -> Start charging \
-r -> reset to idle\
+s -> Start charging 
+r -> reset to idle
 
-3. authorizationFailed: Authorization failed.\
+3. authorizationFailed: Authorization failed.
 
-Actions:\
+Actions:
 
-r-> reset to idel.\
+r-> reset to idel.
 
-4. starting:Preparing to charge.\
+4. starting:Preparing to charge.
 
-Actions: \
+Actions: 
 
-c-> Beging charging(transition to charging)\
-r->  reset to idle.\
+c-> Beging charging(transition to charging)
+r->  reset to idle.
 
-5. charging: Vehicle is charging.\
+5. charging: Vehicle is charging.
 
 actions: 
-t-> stop charging (transition to stopped).\
-r-> reset to idle.\
+t-> stop charging (transition to stopped).
+r-> reset to idle.
 
-6. stopped:Charging stopped.\
+6. stopped:Charging stopped.
 
-Actions:\
+Actions:
 
 r-> Reset to idle
 
@@ -79,6 +77,6 @@ isAuthorized: sumulates authorizaton succes or failure based on random logic
 
 ## Actions 
 
-logStateEntry : logs a message when a new state is entered.\
+logStateEntry : logs a message when a new state is entered.
 logTransition : logs a message informing the transition from the previouse state to the next state.
 
