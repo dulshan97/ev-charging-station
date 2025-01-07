@@ -71,12 +71,12 @@ Every state transition and entry will be logged in the terminal.
 
 - r-> Reset to idle
 
-## Authorized Condion
+## Authorized Condition
 
 isAuthorized: sumulates authorizaton succes or failure based on random logic
 
 ## Actions 
 
-logStateEntry : logs a message when a new state is entered.
-logTransition : logs a message informing the transition from the previouse state to the next state.
+- logStateEntry : logs a message when a new state is entered.
+- logTransition : logs a message informing the transition from the previouse state to the next state.
 
